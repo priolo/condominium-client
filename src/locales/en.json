@@ -1,0 +1,203 @@
+{
+	"pag": {
+		"default": {
+			"btt_save": "Apply",
+			"btt_cancel": "Cancel",
+			"dlg": {
+				"router_confirm": {
+					"title": "Warning! Data not saved",
+					"text": "By continuing you will lose the modified data\nbecause they weren't saved.\nDo you want to continue?",
+					"labelOk": "Yes, change page",
+					"labelCancel": "No! Stay here"
+				}
+			}
+		},
+		"user": {
+			"list": {
+				"title": "Users",
+				"username": "Name",
+				"role": "Role",
+				"actions": "Actions",
+				"btt_new": "New User"
+			},
+			"dlg": {
+				"title_new": "New User",
+				"title_edit": "Edit User",
+				"username": "Name",
+				"email": "Email",
+				"role": "Role",
+				"save": "Save",
+				"cancel": "Cancel",
+				"btt_books": "Books"
+			}
+		},
+		"doc": {
+			"list": {
+				"title": "Documents",
+				"title_doc": "Title",
+				"author": "Author",
+				"link": "Link",
+				"actions": "Actions",
+				"btt_new": "New Document"
+			},
+			"detail": {
+				"title_new": "New Document",
+				"title_edit": "Edit Document",
+				"title_form": "",
+				"title_field": "Title",
+				"desc": "Description",
+				"link": "Link",
+				"author": "Author",
+				"save": "Save",
+				"cancel": "Cancel"
+			}
+		},
+		"profile": {
+			"title": "Profile",
+			"par_general": "General",
+			"prp_email": "Name",
+			"prp_role": "Role",
+			"btn_change_password": "Change Password",
+			"dlg":{
+				"title": "Change password",
+				"save": "Change!",
+				"cancel": "Cancel"
+			}
+		},
+		"login": {
+			"title": "Sign in",
+			"username": "Username",
+			"password": "Password",
+			"signin": "Sign in"
+		},
+		"password": {
+			"title": "Change password",
+			"oldpassword": "Old password",
+			"password": "New password",
+			"repassword": "Retype password",
+			"btt_change": "Change",
+			"btt_logout": "Sign out",
+			"msg_success": "password changed successfully"
+		}
+	},
+	"drawer":{
+		"rigth": {
+			"title": "Filters"
+		}
+	},
+	"validation": {
+		"obligatory": "This field is mandatory",
+		"same_password": "must be the same as the password",
+		"not_the_same": "the two values must be different"
+	},
+	"dialog": {
+		"info": {
+			"default": {
+				"title": "Info",
+				"text": "...",
+				"ok": "Ok"
+			}
+		},
+		"success": {
+			"default": {
+				"title": "Success",
+				"text": "...",
+				"ok": "Ok"
+			}
+		},
+		"warning": {
+			"default": {
+				"title": "Warning",
+				"text": "...",
+				"ok": "Ok"
+			}
+		},
+		"error":{
+			"default": {
+				"title": "Error",
+				"text": "Something went wrong!",
+				"ok": "Ok"
+			},
+			"500": {
+				"default": {
+					"text": "Something went wrong! Please try again or contact the administrator",
+					"ok": "Certainly"
+				}
+			},
+			"400": {
+				"default": {
+					"title": "Bad request",
+					"text": "Something was entered incorrectly. Try again.",
+					"ok": "Ok"
+				},
+				"password_match": {
+					"title": "Wrong username or password",
+					"text": "We couldn't find your account.\nPlease try again or contact the administrator",
+					"ok": "Ok, I will!"
+				}
+			},
+			"401": {
+				"default": {
+					"title": "Unauthorized access",
+					"text": "Strange, you shouldn't be here",
+					"ok": "try again"
+				}
+			},
+			"users": {
+				"unique": {
+					"title": "Ooops...",
+					"text": "username already exists. Try to change it"
+				},
+				"old_password_match": {
+					"title": "Mmmm...",
+					"text": "Old password not match. Try again"
+				}
+			}
+		},
+		"delete": {
+			"title": "WARNING!!!",
+			"text": "Are you sure you want to delete it?",
+			"ok": "Yes!",
+			"cancel": "No"
+		},
+		"render_error": {
+			"title": "Unhandled error!",
+			"body": "If the problem persists contact the administrator",
+			"reload": "Reload"
+		},
+		"login": {
+			"form": {
+				"text": "compila bene la form!"
+			}
+		},
+		"feedback": {
+			"delete": {
+				"success": "the item was successfully deleted",
+				"confirm": {
+					"title": "WARNING! Irreversible operation",
+					"text": "Do you really want to delete this element?",
+					"yes": "Of course",
+					"no": "NO!"
+				}
+			},
+			"create": "the item was created successfully"
+		}
+	},
+	"app":{
+		"avatar": {
+			"profile": "My Profile",
+			"logout": "Sign out",
+			"dark": "Dark"
+		},
+		"roles": {
+			"admin": "admin",
+			"writer": "writer",
+			"customer": "customer"
+		},
+		"auth": {
+			"failed": "I couldn't find your account. Try again",
+			"succeeded": "you have logged in successfully",
+			"logout": "you have logged out successfully"
+		}
+	}
+}
