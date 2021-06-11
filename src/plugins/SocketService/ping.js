@@ -1,56 +1,68 @@
 /* eslint eqeqeq: "off" */
-import { SOCKET_STATE } from "./socketStateEnum"
-import { log } from "../../lib/utils/log"
+import { log } from "@priolo/jon-utils"
+
 
 
 const optionsDefault = {
 	checkDelay: 2000,
-	checkTimeAlert: 4000,
 }
+
+
 
 export class Ping {
 
-	constructor ( server, options=optionsDefault ) {
+	constructor(server, options = optionsDefault) {
 		this.options = { ...optionsDefault, ...options }
 		this.server = server
+		this.onMessage = this.onMessage.bind(this)
 	}
 
-	checkId = null
+	/** ID del timeout */
+	timeoutId = null
+
+	/** data dell'ultimo controllo andato a buon fine */
 	checkLastTime = null
-	inAlert = false // indica che sono in errore ping
 
 
-	
+	/**
+	 * Avvia il ping al server
+	 * invio il ping
+	 */
 	start() {
-		if (this.checkId) return
+		this.stop()
 		this.checkLastTime = Date.now()
-		this.checkId = setInterval( this.onInterval.bind(this), this.options.checkDelay)
+		this.server.websocket.once("message", this.onMessage)
+		this.timeoutId = setTimeout(this.onTimeout.bind(this), this.options.checkDelay)
+		this.server.websocket.send("ping")
 	}
 
+	/**
+	 * Ferma il ping
+	 */
 	stop() {
-		if (!this.checkId) return
-		clearInterval(this.checkId)
-		this.checkId = null
+		this.server.websocket.off("message", this.onMessage)
+		if (!this.timeoutId) return
+		clearTimeout(this.timeoutId)
+		this.timeoutId = null
 	}
 
-	onInterval() {
+	/**
+	 * Se viene richiamato questo evento evidenemente è passato troppo tempo dall'ultimo messaggio ricevuto dal client
+	 * Il server quindi è offline
+	 */
+	onTimeout() {
+		log ("ping:offline")
+		this.stop()
+	}
+
+	/**
+	 * Richiamato quando c'e' un messaggio
+	 */
+	onMessage() {
 		const current = Date.now()
 		const delta = current - this.checkLastTime
-		if (delta >= this.options.checkTimeAlert) {
-			if (!this.inAlert) this.onAlert()
-			this.inAlert = true
-		} else {
-			this.inAlert = false
-		}
-	}
-
-	onAlert() {
-		log("socket:ping:alert")
-		this.server.clear() // chiudo il socket (automaticamente partirà il retry)
-	}
-
-	onMessage() {
-		this.checkLastTime = Date.now()
+		log (`ping:online:${delta}`)
+		this.start()
 	}
 
 }

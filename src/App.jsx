@@ -17,7 +17,7 @@ import { useAuth } from "./stores/auth";
 
 const DocDetail = lazy(() => import('./pages/doc/DocDetail'))
 const DocList = lazy(() => import('./pages/doc/DocList'))
-const UserList = lazy(() => import('./pages/user/UserList'))
+const MessageList = lazy(() => import('./pages/message/MessageList'))
 
 
 
@@ -50,7 +50,6 @@ const App = () => {
 			<CssBaseline />
 			<MsgBox />
 
-
 			{!isRegistered() ? (
 
 				<div>registration...</div>
@@ -65,21 +64,21 @@ const App = () => {
 						{/* ATTENTION: the order is important */}
 						<Switch>
 
-							<Route path={["/docs/:id"]}>
+							{/* <Route path={["/docs/:id"]}>
 								<Suspense fallback={<h1>Loading....</h1>}>
 									<DocDetail />
 								</Suspense>
-							</Route>
+							</Route> */}
 
-							<Route path={["/docs"]}>
+							{/* <Route path={["/docs"]}>
 								<Suspense fallback={<h1>Loading....</h1>}>
 									<DocList />
 								</Suspense>
-							</Route>
+							</Route> */}
 
-							<Route path={["/", "/users"]}>
+							<Route path={["/", "/message"]}>
 								<Suspense fallback={<h1>Loading....</h1>}>
-									<UserList />
+									<MessageList />
 								</Suspense>
 							</Route>
 

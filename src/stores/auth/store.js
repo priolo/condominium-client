@@ -3,9 +3,12 @@ import ajax from "../../plugins/AjaxService";
 import { getStoreDevice } from "../device";
 import { getStorePush } from "../push";
 import { Storage } from '@capacitor/storage'
-import socket from "../../plugins/SocketService"
+
+
+
 
 const store = {
+
 	state: {
 		user: null, //{ id:<???>, username:<string>, has_to_change_password:<bool>, role:<???> }
 		email: "",
@@ -13,16 +16,24 @@ const store = {
 		activationToken: "",
 		token: null,
 	},
+
+	/** init dello STORE */
 	init: (store) => {
+		// se è stato memorizzato ricavo il precedente TOKEN
 		Storage.get({ key: 'token' }).then( ({value}) => {
 			store.setToken(value)
 		})
 	},
+
 	getters: {
 		isLogged: state => state.user != null,
 	},
+
 	actions: {
 
+		/**
+		 * Cerca di connettersi in anonimo
+		 */
 		logInGuest: async (state, _, store) => {
 			const { state: device } = getStoreDevice()
 			const { state: push } = getStorePush()
@@ -41,24 +52,30 @@ const store = {
 			}
 		},
 
+		/**
+		 * Prelevo i dati del mio account. 
+		 * Questo funziona se sei loggato!
+		 */
 		fetchMe: async (state, payload, store) => {
 			if ( !state.token ) return
 			try {
 				const response = await ajax.get("user/me")
 				store.setUser(response)
-				socket.connect(state.token)
 			} catch (error) {
-				store.logo<ut()
+				store.logout()
 			}
 		},
 
+		/**
+		 * Chiudo la sessione
+		 */
 		logout: (state, { flash } = { flash: false }, store) => {
-			socket.disconnect()
 			store.setToken(null)
 			store.setUser(null)
 		},
 
 	},
+
 	mutators: {
 		// [II] deve essere il layout che pesca lo user e adatta la lista non il contrario
 		setUser: (state, user, store) => ({ user }),
@@ -70,6 +87,7 @@ const store = {
 			return { token }
 		},
 	},
+
 }
 
 export default store

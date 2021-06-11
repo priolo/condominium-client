@@ -1,11 +1,8 @@
 /* eslint eqeqeq: "off"*/
-import { getStoreAntenna } from "../../store/antenna";
-import { getStoreAntennaSys } from "../../store/antennaSys";
-import { getStoreChart } from "../../store/chart";
-import { getStoreShip } from "../../store/ship";
-import { getStoreSlu } from "../../store/slu";
+
 
 export class Commands {
+	
 	constructor(server) {
 		this.server = server
 	}
@@ -14,23 +11,20 @@ export class Commands {
 
 		"ping": payload => this.server.ping.onMessage(),
 
-		"rulesengine.event.antennasystem.status": activity => {
-			setAntenna(activity.antennas[0])
-			setAntenna(activity.antennas[1])
-			setSlu(activity.slu)
-			setAntennaSys(activity)
+		"command": param => {
+			console.log(param)
 		},
-
-		"rulesengine.event.ship.status": activity => {
-			setShip(activity.ship_params)
-		},
-
-		"measure_response": activity => {
-			setChart(activity)
-		}
 
 	}
-
+	/**
+	 * 
+	 * @param {*} data 
+	{
+		subject:string 	// identifica il comando da eseguire
+		activity:any	// sono i parametri del comando
+	}
+	 * @returns 
+	 */
 	exe(data) {
 		const cmm = this.table[data.subject]
 		if (!cmm) return
@@ -38,35 +32,3 @@ export class Commands {
 	}
 }
 
-function setAntenna(antenna) {
-	const { state, setAcu, fetchThreshold } = getStoreAntenna(antenna.antenna_number)
-	const oldSatNumber = state.acu.params.satellite_number
-	const newSatNumber = antenna.params.satellite_number
-	setAcu ( antenna )
-	if ( oldSatNumber != newSatNumber ) fetchThreshold()	
-}
-
-function setShip({ longitude, latitude, heading }) {
-	const { setAcu } = getStoreShip()
-	setAcu({ longitude, latitude, heading })
-}
-
-function setSlu(matrix) {
-	const { setAcu } = getStoreSlu()
-	setAcu(matrix)
-}
-
-function setChart(data) {
-	const { setAcu } = getStoreChart()
-	setAcu(data)
-}
-
-function setAntennaSys(data) {
-	const { setAcu } = getStoreAntennaSys()
-	setAcu({
-		mode: data.mode,
-		antenna1Band: data.antenna_1_band,
-		antenna2Band: data.antenna_2_band,
-		shareModems: data.share_modems,
-	})
-}

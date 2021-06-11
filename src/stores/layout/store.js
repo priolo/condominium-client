@@ -21,8 +21,7 @@ const store =  {
 		theme: Cookies.get('theme') == "dark" ? themeDark : themeLight,
 
 		menu: [
-			{ label: "Users", icon: People, route: "/users" },
-			{ label: "Docs", icon: Description, route: "/docs" },
+			{ label: "Message", icon: People, route: "/message" },
 		],
 
 		dialogIsOpen: false,

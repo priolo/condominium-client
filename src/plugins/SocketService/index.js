@@ -1,16 +1,18 @@
 /* eslint eqeqeq: "off" */
-import { log } from "../../lib/utils/log";
-
+import { log } from "@priolo/jon-utils";
 import { Ping } from "./ping";
 import { Reconnect } from "./reconnect";
 import { Commands } from "./commands"
-import { SOCKET_STATE } from "./socketStateEnum.js"
+import { Capacitor } from '@capacitor/core'
+
+
 
 const optionsDefault = {
 	protocol: null,
-	host: null,
-	port: null,
+	host: Capacitor.getPlatform() == "web" ? null : "192.168.8.103",
+	port: 8080,
 }
+
 
 
 export class SocketService {
@@ -24,48 +26,62 @@ export class SocketService {
 		if ( !this.options.port ) this.options.port = loc.port
 
 		this.websocket = null
-		this.ping = new Ping(this)
+		//this.ping = new Ping(this)
 		this.reconnect = new Reconnect(this)
 		this.commands = new Commands(this)
 	}
 
+	/** ultimo token utilizzato (questo valore è usato per la riconnessione) */
 	tokenLast = null
 
-	// tenta di aprire il socket
-	connect(token = this.tokenLast) {
+	/** tenta di aprire il socket */
+	async connect(token = this.tokenLast) {
 		if (this.websocket) return
 		if (!token) return
 		this.tokenLast = token
 		const { protocol, host, port } = this.options
 
-		try {
-			this.websocket = new WebSocket(`${protocol}//${host}:${port}/api/events/?token=${token}`);
-		} catch ( error ) {
-			console.error(error)
-			return
-		}
-
-		this.websocket.onopen = this.onOpen.bind(this);
-		this.websocket.onclose = this.onClose.bind(this);
-		this.websocket.onmessage = this.onMessage.bind(this);
-		this.websocket.onerror = this.onError.bind(this);
+		return new Promise ( (res, rej)=>{
+			try {
+				this.websocket = new WebSocket(`${protocol}//${host}:${port}/com?token=${token}`);
+				this.websocket.onclose = this.onClose.bind(this);
+				this.websocket.onmessage = this.onMessage.bind(this);
+				this.websocket.onerror = this.onError.bind(this);
+				this.websocket.onopen = ()=> {
+					log("socket:open")
+					this.reconnect.stop()
+					//this.ping.start()
+					res()
+				}
+			} catch ( error ) {
+				rej(error)
+			}
+		})
 	}
 
-	// ciude il socket
+	/**
+	 * chiude il socket. 
+	 * questo scatena l'evento "onClose" che riprova a riconnettere
+	 */
 	clear() {
 		if (!this.websocket) return
 		this.websocket.close()
 		this.websocket = null
 	}
 
-	// diconnette e mantiene chiuso il socket (usato nel logout)
+	/**
+	 * diconnette e mantiene chiuso il socket (usato nel logout)
+	 */
 	disconnect() {
 		this.tokenLast = null
 		this.reconnect.stop()
 		this.clear()
 	}
 
-	// invia un messaggio al server
+	/**
+	 * Invia un messaggio al server
+	 * @param {*} data 
+	 */
 	send(data) {
 		this.websocket.send(JSON.stringify(data))
 	}
@@ -74,18 +90,9 @@ export class SocketService {
 
 	//#region SOCKET EVENT
 
-	onOpen(e) {
-		log("socket:open")
-		this.reconnect.stop()
-		this.reconnect.tryZero()
-		this.ping.start()
-	}
-
 	onClose(e) {
 		log("socket:close")
-		this.ping.stop()
-		this.clear()
-		if (!this.tokenLast) return
+		//this.ping.stop()
 		this.reconnect.start()
 	}
 

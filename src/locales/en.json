@@ -12,6 +12,12 @@
 				}
 			}
 		},
+		"message": {
+			"list": {
+				"title": "Messages",
+				"test": "Test"
+			}
+		},
 		"user": {
 			"list": {
 				"title": "Users",
