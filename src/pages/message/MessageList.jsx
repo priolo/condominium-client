@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useLayout } from '../../stores/layout';
 import { makeStyles } from '@material-ui/core/styles';
 import { Button, Typography } from '@material-ui/core';
-import { Add as AddIcon } from '@material-ui/icons';
+import { Add as AddIcon, TextFields } from '@material-ui/icons';
 import Form from '../../components/form/Form';
 import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router';
@@ -17,7 +17,7 @@ function MessageList() {
 	// HOOKs
 	const { t } = useTranslation()
 	const history = useHistory()
-	const { state: message, sendTest } = useMessage();
+	const { state: message, sendMessage } = useMessage();
 	const { state: route, setCurrentPage } = useRoute()
 	const { setTitle } = useLayout()
 	const classes = useStyles()
@@ -29,8 +29,11 @@ function MessageList() {
 
 
 	//HANDLEs
-	const handleClickTest = () => {
-		sendTest()
+	const handleClickSendMessage = () => {
+		//sendText()
+	}
+	const handleChangeText = e => {
+		//setText(e.target.value)
 	}
 
 
@@ -42,13 +45,17 @@ function MessageList() {
 					variant="contained"
 					color="primary"
 					startIcon={<AddIcon />}
-					onClick={handleClickTest}
+					onClick={handleClickSendMessage}
 				>
 					{t("pag.message.list.test")}
 				</Button>
 			}
 		>
 			<Typography>MEssages!!!</Typography>
+			<TextFields
+				value={message.text}
+				onChange={handleChangeText}
+			/>
 		</Form>
 	)
 }

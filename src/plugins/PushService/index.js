@@ -1,27 +1,17 @@
-/* eslint eqeqeq: "off" */
 import { PushNotifications } from '@capacitor/push-notifications'
 import { Capacitor } from '@capacitor/core'
 
 
+export class PushService {
 
-const store = {
+	constructor() {
+		this.token = null
+	}
 
-	state: {
-		token: null,
-	},
+	async init() {
+		if (Capacitor.getPlatform() == "web") return
 
-	getters: {
-		isRegistered: (state) => {
-			return Capacitor.getPlatform() == "web" || state.token!=null
-		},
-	},
-
-	actions: {
-		init: async (state, _, store) => {
-			if ( Capacitor.getPlatform() == "web" ) return
-
-			let resolve, reject
-			const promise = new Promise((res, rej)=> {resolve=res; reject=rej})
+		return new Promise(async (res, rej) => {
 
 			// Request permission to use push notifications
 			// iOS will prompt user and return if they granted permission or not
@@ -29,14 +19,14 @@ const store = {
 			const { receive } = await PushNotifications.requestPermissions()
 			if (receive == "granted") {
 				// Register with Apple / Google to receive push via APNS/FCM
-				try{
+				try {
 					PushNotifications.register();
-				} catch ( error ) {
-					reject(error)
+				} catch (error) {
+					rej(error)
 					return
 				}
 			} else {
-				reject('no prermission')
+				rej('no prermission')
 				return
 			}
 
@@ -46,12 +36,12 @@ const store = {
 				(token) => {
 					console.log('Token: ' + token.value)
 					store.setToken(token.value)
-					resolve()
+					res()
 				}
 			);
 
 			// Some issue with our setup and push will not work
-			PushNotifications.addListener('registrationError', (error) => reject(error) )
+			PushNotifications.addListener('registrationError', (error) => rej(error))
 
 			// Show us the notification payload if the app is open on our device
 			PushNotifications.addListener('pushNotificationReceived',
@@ -66,13 +56,10 @@ const store = {
 					alert('Push action performed: ' + JSON.stringify(notification));
 				}
 			);
+		})
+	}
 
-			return promise
-		},
-	},
-	mutators: {
-		setToken: ( state, token) => ({ token }),
-	},
 }
 
-export default store
+const ps = new PushService()
+export default ps

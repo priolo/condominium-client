@@ -11,9 +11,9 @@ import MsgBox from "./components/app/MsgBox";
 import LoginPage from "./pages/login/LoginPage";
 
 import { useLayout } from "./stores/layout";
-import { usePush } from "./stores/push";
 import { useDevice } from "./stores/device";
 import { useAuth } from "./stores/auth";
+import DebugButton from "./components/debug/DebugButton"
 
 const DocDetail = lazy(() => import('./pages/doc/DocDetail'))
 const DocList = lazy(() => import('./pages/doc/DocList'))
@@ -25,18 +25,11 @@ const App = () => {
 
 	// HOOKs
 	const { state: layout } = useLayout()
-	const { state: push, isRegistered, init: initPush } = usePush()
-	const { state: device, init: initDevice } = useDevice()
+		const { state: device, init: initDevice, isInitialized } = useDevice()
 	const { state: auth, isLogged, fetchMe } = useAuth()
 
 	useEffect(() => {
 		(async () => {
-			try {
-				await initPush()
-			} catch ( error ) {
-				console.error ( error )
-				return
-			}
 			await initDevice()
 			fetchMe()
 		})()
@@ -50,7 +43,7 @@ const App = () => {
 			<CssBaseline />
 			<MsgBox />
 
-			{!isRegistered() ? (
+			{!isInitialized() ? (
 
 				<div>registration...</div>
 
@@ -101,6 +94,9 @@ const App = () => {
 				</Router>
 
 			)}
+
+			{/* DEBUG BUTTON */}
+            <DebugButton/>
 
 		</ThemeProvider>
 

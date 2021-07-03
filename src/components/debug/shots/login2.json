@@ -1,0 +1,658 @@
+[
+	{
+		"type": 0,
+		"payload": {
+			"doc": {
+				"all": [
+					{
+						"id": "1",
+						"title": "Questo è il titolo 1",
+						"type": "doc",
+						"author": "Ivano Iorio",
+						"date": "2021/04/09",
+						"body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sapien massa. Nulla ornare, augue sed vestibulum feugiat, mi quam tempus tortor, in hendrerit libero leo in nisl. Nam molestie mauris non nunc fermentum, eget pellentesque turpis porttitor. Pellentesque vestibulum facilisis ligula, ut pulvinar diam porttitor nec. In vulputate molestie ante at vestibulum. Pellentesque gravida eros in ligula hendrerit egestas. Etiam quis purus elementum, semper nibh sed, ultrices lacus. In ultricies rutrum suscipit. Vestibulum in sollicitudin enim. Curabitur eget imperdiet urna, eu facilisis neque. Nunc nibh sapien, congue et urna et, ullamcorper hendrerit mauris. Maecenas et sagittis mauris. Praesent quis tortor turpis. Vivamus maximus leo vel dignissim pretium. Donec tempor purus vel neque gravida, at tempus orci condimentum."
+					},
+					{
+						"id": "2",
+						"title": "Questo è il titolo 2",
+						"type": "doc",
+						"author": "Ivano Iorio",
+						"date": "2021/04/09",
+						"body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sapien massa. Nulla ornare, augue sed vestibulum feugiat, mi quam tempus tortor, in hendrerit libero leo in nisl. Nam molestie mauris non nunc fermentum, eget pellentesque turpis porttitor. Pellentesque vestibulum facilisis ligula, ut pulvinar diam porttitor nec. In vulputate molestie ante at vestibulum. Pellentesque gravida eros in ligula hendrerit egestas. Etiam quis purus elementum, semper nibh sed, ultrices lacus. In ultricies rutrum suscipit. Vestibulum in sollicitudin enim. Curabitur eget imperdiet urna, eu facilisis neque. Nunc nibh sapien, congue et urna et, ullamcorper hendrerit mauris. Maecenas et sagittis mauris. Praesent quis tortor turpis. Vivamus maximus leo vel dignissim pretium. Donec tempor purus vel neque gravida, at tempus orci condimentum."
+					},
+					{
+						"id": "3",
+						"title": "Questo è il titolo 3",
+						"type": "doc",
+						"author": "Ivano Iorio",
+						"date": "2021/04/09",
+						"body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sapien massa. Nulla ornare, augue sed vestibulum feugiat, mi quam tempus tortor, in hendrerit libero leo in nisl. Nam molestie mauris non nunc fermentum, eget pellentesque turpis porttitor. Pellentesque vestibulum facilisis ligula, ut pulvinar diam porttitor nec. In vulputate molestie ante at vestibulum. Pellentesque gravida eros in ligula hendrerit egestas. Etiam quis purus elementum, semper nibh sed, ultrices lacus. In ultricies rutrum suscipit. Vestibulum in sollicitudin enim. Curabitur eget imperdiet urna, eu facilisis neque. Nunc nibh sapien, congue et urna et, ullamcorper hendrerit mauris. Maecenas et sagittis mauris. Praesent quis tortor turpis. Vivamus maximus leo vel dignissim pretium. Donec tempor purus vel neque gravida, at tempus orci condimentum."
+					}
+				],
+				"focus": null
+			},
+			"menu": {
+				"all": [
+					{
+						"id": 513,
+						"label": "cap 1"
+					},
+					{
+						"id": 514,
+						"label": "cap 2"
+					},
+					{
+						"id": 515,
+						"label": "cap 3"
+					},
+					{
+						"id": 516,
+						"label": "root"
+					},
+					{
+						"id": 517,
+						"label": "benessere"
+					},
+					{
+						"id": 518,
+						"label": "cap lavoro"
+					},
+					{
+						"id": 519,
+						"label": "sport"
+					},
+					{
+						"id": 520,
+						"label": "generale"
+					}
+				],
+				"bottom": []
+			},
+			"url": {
+				"url": ""
+			},
+			"layout": {
+				"busy": false,
+				"title": "",
+				"focus": "",
+				"dialogIsOpen": false,
+				"dialogOptions": {
+					"modal": true
+				}
+			},
+			"auth": {
+				"user": null,
+				"token": "((admin2))",
+				"email": "",
+				"password": "",
+				"activationToken": ""
+			},
+			"node": {
+				"all": []
+			}
+		}
+	},
+	{
+		"type": 3,
+		"storeName": "doc",
+		"propName": "setAll",
+		"payload": [
+			{
+				"type": "register",
+				"author": "",
+				"date": 1620068889172,
+				"options": {
+					"status": 0,
+					"singletone": true
+				},
+				"title": "",
+				"body": "",
+				"id": "tmp_669"
+			},
+			{
+				"id": "1",
+				"title": "Questo è il titolo 1",
+				"type": "doc",
+				"author": "Ivano Iorio",
+				"date": "2021/04/09",
+				"body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sapien massa. Nulla ornare, augue sed vestibulum feugiat, mi quam tempus tortor, in hendrerit libero leo in nisl. Nam molestie mauris non nunc fermentum, eget pellentesque turpis porttitor. Pellentesque vestibulum facilisis ligula, ut pulvinar diam porttitor nec. In vulputate molestie ante at vestibulum. Pellentesque gravida eros in ligula hendrerit egestas. Etiam quis purus elementum, semper nibh sed, ultrices lacus. In ultricies rutrum suscipit. Vestibulum in sollicitudin enim. Curabitur eget imperdiet urna, eu facilisis neque. Nunc nibh sapien, congue et urna et, ullamcorper hendrerit mauris. Maecenas et sagittis mauris. Praesent quis tortor turpis. Vivamus maximus leo vel dignissim pretium. Donec tempor purus vel neque gravida, at tempus orci condimentum."
+			},
+			{
+				"id": "2",
+				"title": "Questo è il titolo 2",
+				"type": "doc",
+				"author": "Ivano Iorio",
+				"date": "2021/04/09",
+				"body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sapien massa. Nulla ornare, augue sed vestibulum feugiat, mi quam tempus tortor, in hendrerit libero leo in nisl. Nam molestie mauris non nunc fermentum, eget pellentesque turpis porttitor. Pellentesque vestibulum facilisis ligula, ut pulvinar diam porttitor nec. In vulputate molestie ante at vestibulum. Pellentesque gravida eros in ligula hendrerit egestas. Etiam quis purus elementum, semper nibh sed, ultrices lacus. In ultricies rutrum suscipit. Vestibulum in sollicitudin enim. Curabitur eget imperdiet urna, eu facilisis neque. Nunc nibh sapien, congue et urna et, ullamcorper hendrerit mauris. Maecenas et sagittis mauris. Praesent quis tortor turpis. Vivamus maximus leo vel dignissim pretium. Donec tempor purus vel neque gravida, at tempus orci condimentum."
+			},
+			{
+				"id": "3",
+				"title": "Questo è il titolo 3",
+				"type": "doc",
+				"author": "Ivano Iorio",
+				"date": "2021/04/09",
+				"body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sapien massa. Nulla ornare, augue sed vestibulum feugiat, mi quam tempus tortor, in hendrerit libero leo in nisl. Nam molestie mauris non nunc fermentum, eget pellentesque turpis porttitor. Pellentesque vestibulum facilisis ligula, ut pulvinar diam porttitor nec. In vulputate molestie ante at vestibulum. Pellentesque gravida eros in ligula hendrerit egestas. Etiam quis purus elementum, semper nibh sed, ultrices lacus. In ultricies rutrum suscipit. Vestibulum in sollicitudin enim. Curabitur eget imperdiet urna, eu facilisis neque. Nunc nibh sapien, congue et urna et, ullamcorper hendrerit mauris. Maecenas et sagittis mauris. Praesent quis tortor turpis. Vivamus maximus leo vel dignissim pretium. Donec tempor purus vel neque gravida, at tempus orci condimentum."
+			}
+		]
+	},
+	{
+		"type": 3,
+		"storeName": "url",
+		"propName": "setHash",
+		"payload": "tmp_669"
+	},
+	{
+		"type": 1,
+		"storeName": "doc",
+		"propName": "open",
+		"payload": {
+			"type": "register",
+			"options": {
+				"singletone": true
+			}
+		}
+	},
+	{
+		"type": 3,
+		"storeName": "url",
+		"propName": "setHash",
+		"payload": "tmp_669"
+	},
+	{
+		"type": 3,
+		"storeName": "auth",
+		"propName": "setEmail",
+		"payload": "m"
+	},
+	{
+		"type": 3,
+		"storeName": "auth",
+		"propName": "setEmail",
+		"payload": "ma"
+	},
+	{
+		"type": 3,
+		"storeName": "auth",
+		"propName": "setEmail",
+		"payload": "mar"
+	},
+	{
+		"type": 3,
+		"storeName": "auth",
+		"propName": "setEmail",
+		"payload": "mari"
+	},
+	{
+		"type": 3,
+		"storeName": "auth",
+		"propName": "setEmail",
+		"payload": "marin"
+	},
+	{
+		"type": 3,
+		"storeName": "auth",
+		"propName": "setEmail",
+		"payload": "marina"
+	},
+	{
+		"type": 3,
+		"storeName": "auth",
+		"propName": "setEmail",
+		"payload": "marina@"
+	},
+	{
+		"type": 3,
+		"storeName": "auth",
+		"propName": "setEmail",
+		"payload": "marina@g"
+	},
+	{
+		"type": 3,
+		"storeName": "auth",
+		"propName": "setEmail",
+		"payload": "marina@gi"
+	},
+	{
+		"type": 3,
+		"storeName": "auth",
+		"propName": "setEmail",
+		"payload": "marina@gig"
+	},
+	{
+		"type": 3,
+		"storeName": "auth",
+		"propName": "setEmail",
+		"payload": "marina@gigg"
+	},
+	{
+		"type": 3,
+		"storeName": "auth",
+		"propName": "setEmail",
+		"payload": "marina@giggi"
+	},
+	{
+		"type": 3,
+		"storeName": "auth",
+		"propName": "setEmail",
+		"payload": "marina@giggia"
+	},
+	{
+		"type": 3,
+		"storeName": "auth",
+		"propName": "setEmail",
+		"payload": "marina@giggia."
+	},
+	{
+		"type": 3,
+		"storeName": "auth",
+		"propName": "setEmail",
+		"payload": "marina@giggia.c"
+	},
+	{
+		"type": 3,
+		"storeName": "auth",
+		"propName": "setEmail",
+		"payload": "marina@giggia.co"
+	},
+	{
+		"type": 3,
+		"storeName": "auth",
+		"propName": "setEmail",
+		"payload": "marina@giggia.com"
+	},
+	{
+		"type": 3,
+		"storeName": "layout",
+		"propName": "setBusy",
+		"payload": true
+	},
+	{
+		"type": 3,
+		"storeName": "url",
+		"propName": "setHash",
+		"payload": "tmp_669"
+	},
+	{
+		"type": 3,
+		"storeName": "layout",
+		"propName": "setBusy",
+		"payload": false
+	},
+	{
+		"type": 3,
+		"storeName": "layout",
+		"propName": "setDialogOpen",
+		"payload": {
+			"type": "success",
+			"text": "check email",
+			"modal": false
+		}
+	},
+	{
+		"type": 3,
+		"storeName": "doc",
+		"propName": "setAll",
+		"payload": [
+			{
+				"type": "activate",
+				"author": "",
+				"date": 1620068889172,
+				"options": {
+					"status": 0,
+					"singletone": true
+				},
+				"title": "",
+				"body": "",
+				"id": "tmp_587"
+			},
+			{
+				"type": "register",
+				"author": "",
+				"date": 1620068889172,
+				"options": {
+					"status": 0,
+					"singletone": true
+				},
+				"title": "",
+				"body": "",
+				"id": "tmp_669"
+			},
+			{
+				"id": "1",
+				"title": "Questo è il titolo 1",
+				"type": "doc",
+				"author": "Ivano Iorio",
+				"date": "2021/04/09",
+				"body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sapien massa. Nulla ornare, augue sed vestibulum feugiat, mi quam tempus tortor, in hendrerit libero leo in nisl. Nam molestie mauris non nunc fermentum, eget pellentesque turpis porttitor. Pellentesque vestibulum facilisis ligula, ut pulvinar diam porttitor nec. In vulputate molestie ante at vestibulum. Pellentesque gravida eros in ligula hendrerit egestas. Etiam quis purus elementum, semper nibh sed, ultrices lacus. In ultricies rutrum suscipit. Vestibulum in sollicitudin enim. Curabitur eget imperdiet urna, eu facilisis neque. Nunc nibh sapien, congue et urna et, ullamcorper hendrerit mauris. Maecenas et sagittis mauris. Praesent quis tortor turpis. Vivamus maximus leo vel dignissim pretium. Donec tempor purus vel neque gravida, at tempus orci condimentum."
+			},
+			{
+				"id": "2",
+				"title": "Questo è il titolo 2",
+				"type": "doc",
+				"author": "Ivano Iorio",
+				"date": "2021/04/09",
+				"body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sapien massa. Nulla ornare, augue sed vestibulum feugiat, mi quam tempus tortor, in hendrerit libero leo in nisl. Nam molestie mauris non nunc fermentum, eget pellentesque turpis porttitor. Pellentesque vestibulum facilisis ligula, ut pulvinar diam porttitor nec. In vulputate molestie ante at vestibulum. Pellentesque gravida eros in ligula hendrerit egestas. Etiam quis purus elementum, semper nibh sed, ultrices lacus. In ultricies rutrum suscipit. Vestibulum in sollicitudin enim. Curabitur eget imperdiet urna, eu facilisis neque. Nunc nibh sapien, congue et urna et, ullamcorper hendrerit mauris. Maecenas et sagittis mauris. Praesent quis tortor turpis. Vivamus maximus leo vel dignissim pretium. Donec tempor purus vel neque gravida, at tempus orci condimentum."
+			},
+			{
+				"id": "3",
+				"title": "Questo è il titolo 3",
+				"type": "doc",
+				"author": "Ivano Iorio",
+				"date": "2021/04/09",
+				"body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sapien massa. Nulla ornare, augue sed vestibulum feugiat, mi quam tempus tortor, in hendrerit libero leo in nisl. Nam molestie mauris non nunc fermentum, eget pellentesque turpis porttitor. Pellentesque vestibulum facilisis ligula, ut pulvinar diam porttitor nec. In vulputate molestie ante at vestibulum. Pellentesque gravida eros in ligula hendrerit egestas. Etiam quis purus elementum, semper nibh sed, ultrices lacus. In ultricies rutrum suscipit. Vestibulum in sollicitudin enim. Curabitur eget imperdiet urna, eu facilisis neque. Nunc nibh sapien, congue et urna et, ullamcorper hendrerit mauris. Maecenas et sagittis mauris. Praesent quis tortor turpis. Vivamus maximus leo vel dignissim pretium. Donec tempor purus vel neque gravida, at tempus orci condimentum."
+			}
+		]
+	},
+	{
+		"type": 3,
+		"storeName": "url",
+		"propName": "setHash",
+		"payload": "tmp_587"
+	},
+	{
+		"type": 1,
+		"storeName": "doc",
+		"propName": "open",
+		"payload": {
+			"type": "activate",
+			"options": {
+				"singletone": true
+			}
+		}
+	},
+	{
+		"type": 1,
+		"storeName": "auth",
+		"propName": "register"
+	},
+	{
+		"type": 3,
+		"storeName": "layout",
+		"propName": "setDialogClose"
+	},
+	{
+		"type": 1,
+		"storeName": "layout",
+		"propName": "dialogOpen",
+		"payload": {
+			"type": "success",
+			"text": "check email",
+			"modal": false
+		}
+	},
+	{
+		"type": 1,
+		"storeName": "layout",
+		"propName": "dialogClose",
+		"payload": false
+	},
+	{
+		"type": 3,
+		"storeName": "url",
+		"propName": "setHash",
+		"payload": "tmp_587"
+	},
+	{
+		"type": 3,
+		"storeName": "auth",
+		"propName": "setPassword",
+		"payload": "p"
+	},
+	{
+		"type": 3,
+		"storeName": "auth",
+		"propName": "setPassword",
+		"payload": "pa"
+	},
+	{
+		"type": 3,
+		"storeName": "auth",
+		"propName": "setPassword",
+		"payload": "pas"
+	},
+	{
+		"type": 3,
+		"storeName": "auth",
+		"propName": "setPassword",
+		"payload": "pass"
+	},
+	{
+		"type": 3,
+		"storeName": "auth",
+		"propName": "setActivationToken",
+		"payload": "A"
+	},
+	{
+		"type": 3,
+		"storeName": "auth",
+		"propName": "setActivationToken",
+		"payload": "AA"
+	},
+	{
+		"type": 3,
+		"storeName": "auth",
+		"propName": "setActivationToken",
+		"payload": "AAA"
+	},
+	{
+		"type": 3,
+		"storeName": "layout",
+		"propName": "setBusy",
+		"payload": true
+	},
+	{
+		"type": 3,
+		"storeName": "url",
+		"propName": "setHash",
+		"payload": "tmp_587"
+	},
+	{
+		"type": 3,
+		"storeName": "layout",
+		"propName": "setBusy",
+		"payload": false
+	},
+	{
+		"type": 3,
+		"storeName": "layout",
+		"propName": "setDialogOpen",
+		"payload": {
+			"type": "success",
+			"text": "attivato!!!",
+			"modal": false
+		}
+	},
+	{
+		"type": 3,
+		"storeName": "doc",
+		"propName": "setAll",
+		"payload": [
+			{
+				"type": "login",
+				"author": "",
+				"date": 1620068889172,
+				"options": {
+					"status": 0,
+					"singletone": true
+				},
+				"title": "",
+				"body": "",
+				"id": "tmp_33"
+			},
+			{
+				"type": "activate",
+				"author": "",
+				"date": 1620068889172,
+				"options": {
+					"status": 0,
+					"singletone": true
+				},
+				"title": "",
+				"body": "",
+				"id": "tmp_587"
+			},
+			{
+				"type": "register",
+				"author": "",
+				"date": 1620068889172,
+				"options": {
+					"status": 0,
+					"singletone": true
+				},
+				"title": "",
+				"body": "",
+				"id": "tmp_669"
+			},
+			{
+				"id": "1",
+				"title": "Questo è il titolo 1",
+				"type": "doc",
+				"author": "Ivano Iorio",
+				"date": "2021/04/09",
+				"body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sapien massa. Nulla ornare, augue sed vestibulum feugiat, mi quam tempus tortor, in hendrerit libero leo in nisl. Nam molestie mauris non nunc fermentum, eget pellentesque turpis porttitor. Pellentesque vestibulum facilisis ligula, ut pulvinar diam porttitor nec. In vulputate molestie ante at vestibulum. Pellentesque gravida eros in ligula hendrerit egestas. Etiam quis purus elementum, semper nibh sed, ultrices lacus. In ultricies rutrum suscipit. Vestibulum in sollicitudin enim. Curabitur eget imperdiet urna, eu facilisis neque. Nunc nibh sapien, congue et urna et, ullamcorper hendrerit mauris. Maecenas et sagittis mauris. Praesent quis tortor turpis. Vivamus maximus leo vel dignissim pretium. Donec tempor purus vel neque gravida, at tempus orci condimentum."
+			},
+			{
+				"id": "2",
+				"title": "Questo è il titolo 2",
+				"type": "doc",
+				"author": "Ivano Iorio",
+				"date": "2021/04/09",
+				"body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sapien massa. Nulla ornare, augue sed vestibulum feugiat, mi quam tempus tortor, in hendrerit libero leo in nisl. Nam molestie mauris non nunc fermentum, eget pellentesque turpis porttitor. Pellentesque vestibulum facilisis ligula, ut pulvinar diam porttitor nec. In vulputate molestie ante at vestibulum. Pellentesque gravida eros in ligula hendrerit egestas. Etiam quis purus elementum, semper nibh sed, ultrices lacus. In ultricies rutrum suscipit. Vestibulum in sollicitudin enim. Curabitur eget imperdiet urna, eu facilisis neque. Nunc nibh sapien, congue et urna et, ullamcorper hendrerit mauris. Maecenas et sagittis mauris. Praesent quis tortor turpis. Vivamus maximus leo vel dignissim pretium. Donec tempor purus vel neque gravida, at tempus orci condimentum."
+			},
+			{
+				"id": "3",
+				"title": "Questo è il titolo 3",
+				"type": "doc",
+				"author": "Ivano Iorio",
+				"date": "2021/04/09",
+				"body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sapien massa. Nulla ornare, augue sed vestibulum feugiat, mi quam tempus tortor, in hendrerit libero leo in nisl. Nam molestie mauris non nunc fermentum, eget pellentesque turpis porttitor. Pellentesque vestibulum facilisis ligula, ut pulvinar diam porttitor nec. In vulputate molestie ante at vestibulum. Pellentesque gravida eros in ligula hendrerit egestas. Etiam quis purus elementum, semper nibh sed, ultrices lacus. In ultricies rutrum suscipit. Vestibulum in sollicitudin enim. Curabitur eget imperdiet urna, eu facilisis neque. Nunc nibh sapien, congue et urna et, ullamcorper hendrerit mauris. Maecenas et sagittis mauris. Praesent quis tortor turpis. Vivamus maximus leo vel dignissim pretium. Donec tempor purus vel neque gravida, at tempus orci condimentum."
+			}
+		]
+	},
+	{
+		"type": 3,
+		"storeName": "url",
+		"propName": "setHash",
+		"payload": "tmp_33"
+	},
+	{
+		"type": 1,
+		"storeName": "doc",
+		"propName": "open",
+		"payload": {
+			"type": "login",
+			"options": {
+				"singletone": true
+			}
+		}
+	},
+	{
+		"type": 1,
+		"storeName": "auth",
+		"propName": "activate"
+	},
+	{
+		"type": 3,
+		"storeName": "layout",
+		"propName": "setDialogClose"
+	},
+	{
+		"type": 1,
+		"storeName": "layout",
+		"propName": "dialogOpen",
+		"payload": {
+			"type": "success",
+			"text": "attivato!!!",
+			"modal": false
+		}
+	},
+	{
+		"type": 1,
+		"storeName": "layout",
+		"propName": "dialogClose",
+		"payload": false
+	},
+	{
+		"type": 3,
+		"storeName": "url",
+		"propName": "setHash",
+		"payload": "tmp_33"
+	},
+	{
+		"type": 3,
+		"storeName": "layout",
+		"propName": "setBusy",
+		"payload": true
+	},
+	{
+		"type": 3,
+		"storeName": "layout",
+		"propName": "setBusy",
+		"payload": false
+	},
+	{
+		"type": 3,
+		"storeName": "layout",
+		"propName": "setDialogOpen",
+		"payload": {
+			"type": "success",
+			"text": "login!!!",
+			"modal": false
+		}
+	},
+	{
+		"type": 3,
+		"storeName": "layout",
+		"propName": "setBusy",
+		"payload": true
+	},
+	{
+		"type": 3,
+		"storeName": "layout",
+		"propName": "setBusy",
+		"payload": false
+	},
+	{
+		"type": 3,
+		"storeName": "auth",
+		"propName": "setUser",
+		"payload": {
+			"id": 252,
+			"email": "marina@giggia.com",
+			"name": "",
+			"iat": 1620068916,
+			"exp": 1620072516
+		}
+	},
+	{
+		"type": 1,
+		"storeName": "auth",
+		"propName": "fetchCurrentUser"
+	},
+	{
+		"type": 1,
+		"storeName": "auth",
+		"propName": "login"
+	},
+	{
+		"type": 3,
+		"storeName": "layout",
+		"propName": "setDialogClose"
+	},
+	{
+		"type": 1,
+		"storeName": "layout",
+		"propName": "dialogOpen",
+		"payload": {
+			"type": "success",
+			"text": "login!!!",
+			"modal": false
+		}
+	},
+	{
+		"type": 1,
+		"storeName": "layout",
+		"propName": "dialogClose",
+		"payload": false
+	}
+]

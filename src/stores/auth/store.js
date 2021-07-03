@@ -10,17 +10,27 @@ import { Storage } from '@capacitor/storage'
 const store = {
 
 	state: {
-		user: null, //{ id:<???>, username:<string>, has_to_change_password:<bool>, role:<???> }
+		/**
+		 * User correntemente loggato  
+		 * { id:<???>, username:<string>, has_to_change_password:<bool>, role:<???> }
+		 */
+		user: null,
+		/** token della sessione jwt */
+		token: null,
+
+
+
+
 		email: "",
 		password: "",
 		activationToken: "",
-		token: null,
+
 	},
 
 	/** init dello STORE */
 	init: (store) => {
 		// se è stato memorizzato ricavo il precedente TOKEN
-		Storage.get({ key: 'token' }).then( ({value}) => {
+		Storage.get({ key: 'token' }).then(({ value }) => {
 			store.setToken(value)
 		})
 	},
@@ -57,7 +67,7 @@ const store = {
 		 * Questo funziona se sei loggato!
 		 */
 		fetchMe: async (state, payload, store) => {
-			if ( !state.token ) return
+			if (!state.token) return
 			try {
 				const response = await ajax.get("user/me")
 				store.setUser(response)
@@ -77,15 +87,20 @@ const store = {
 	},
 
 	mutators: {
-		// [II] deve essere il layout che pesca lo user e adatta la lista non il contrario
 		setUser: (state, user, store) => ({ user }),
+		setToken: (state, token) => {
+			if (!token || token.length == 0) {
+				Storage.remove({ key: "token" })
+			} else {
+				Storage.set({ key: 'token', value: token });
+			}
+			return { token }
+		},
+
+
 		setEmail: (state, email) => ({ email }),
 		setPassword: (state, password) => ({ password }),
 		setActivationToken: (state, activationToken) => ({ activationToken }),
-		setToken: (state, token) => {
-			Storage.set({ key: 'token', value: token });
-			return { token }
-		},
 	},
 
 }

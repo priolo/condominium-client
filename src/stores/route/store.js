@@ -1,6 +1,6 @@
 /* eslint eqeqeq: "off", react-hooks/exhaustive-deps: "off"*/
 
-
+/** Si occupa del ROUTE URL  */
 const store = {
 	state: {
 		currentPage: "",

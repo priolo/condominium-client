@@ -43,9 +43,9 @@ export class SocketService {
 
 		return new Promise ( (res, rej)=>{
 			try {
-				this.websocket = new WebSocket(`${protocol}//${host}:${port}/com?token=${token}`);
+				this.websocket = new WebSocket(`${protocol}//${host}:${port}?token=${token}`);
 				this.websocket.onclose = this.onClose.bind(this);
-				this.websocket.onmessage = this.onMessage.bind(this);
+				//this.websocket.onmessage = this.onMessage.bind(this);
 				this.websocket.onerror = this.onError.bind(this);
 				this.websocket.onopen = ()=> {
 					log("socket:open")
@@ -78,13 +78,37 @@ export class SocketService {
 		this.clear()
 	}
 
+
+
+
+
+
+	//#region MESSAGES
+
 	/**
 	 * Invia un messaggio al server
 	 * @param {*} data 
 	 */
-	send(data) {
-		this.websocket.send(JSON.stringify(data))
+	 send(data) {
+		 if ( typeof data != "string" ) data = JSON.stringify(data)
+		this.websocket.send(data)
 	}
+
+	/** Invia un messaggio al server e aspetta una risposta */
+	async sendAndWait ( action, payload ) {
+		return new Promise((res, rej) => {
+			this.websocket.once("message", (data) => {
+				const jsonData = JSON.parse(data)
+				res(jsonData)
+			})
+			ws.send(JSON.stringify({
+				path: "com", action, payload
+			}))
+	
+		})
+	}
+	
+	//#endregion
 
 
 
@@ -96,11 +120,11 @@ export class SocketService {
 		this.reconnect.start()
 	}
 
-	onMessage(e) {
-		const data = JSON.parse(e.data)
-		log("socket:data:", data)
-		this.commands.exe(data)
-	}
+	// onMessage(e) {
+	// 	const data = JSON.parse(e.data)
+	// 	log("socket:data:", data)
+	// 	this.commands.exe(data)
+	// }
 
 	onError(e) {
 		log("socket:error:", e)
