@@ -35,7 +35,7 @@ export class PushService {
 			PushNotifications.addListener('registration',
 				(token) => {
 					console.log('Token: ' + token.value)
-					store.setToken(token.value)
+					this.token = token.value
 					res()
 				}
 			);

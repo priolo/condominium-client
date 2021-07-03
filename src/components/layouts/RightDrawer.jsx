@@ -2,9 +2,9 @@
 import { Drawer, Grid, IconButton, makeStyles, Typography } from "@material-ui/core"
 import { Close as CloseIcon } from '@material-ui/icons'
 import { useLayout } from "../../stores/layout"
-import DocFilters from "../../pages/doc/DocFilters";
-import { useRoute } from "../../stores/route";
-import { useEffect } from "react";
+// import DocFilters from "../../pages/doc/DocFilters";
+// import { useRoute } from "../../stores/route";
+// import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 
@@ -13,21 +13,21 @@ function RightDrawer() {
 	const classes = useStyles()
 	const { t } = useTranslation()
 	const { state: layout, setDrawerRightIsOpen } = useLayout()
-	const { state: route, haveSearchExtra } = useRoute()
+	//const { state: route, haveSearchExtra } = useRoute()
 
 
 	const handleClickClose = () => setDrawerRightIsOpen(false)
 
-	const renderCont = {
-		"doc.list": <DocFilters />,
-	}[route.currentPage] ?? null
+	// const renderCont = {
+	// 	"doc.list": <DocFilters />,
+	// }[route.currentPage] ?? null
 
-	const haveExtra = haveSearchExtra()
+	// const haveExtra = haveSearchExtra()
 
-	useEffect(() => {
-		if (!renderCont) setDrawerRightIsOpen(false)
-		else if (haveExtra) setDrawerRightIsOpen(true)
-	}, [route.currentPage, haveExtra])
+	// useEffect(() => {
+	// 	if (!renderCont) setDrawerRightIsOpen(false)
+	// 	else if (haveExtra) setDrawerRightIsOpen(true)
+	// }, [route.currentPage, haveExtra])
 
 
 
@@ -47,7 +47,7 @@ function RightDrawer() {
 					</IconButton>
 				</Grid>
 
-				{renderCont}
+				{/* {renderCont} */}
 
 			</Grid>
 		</Drawer>

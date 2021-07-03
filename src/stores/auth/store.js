@@ -1,7 +1,7 @@
 /* eslint eqeqeq: "off" */
 import ajax from "../../plugins/AjaxService";
 import { getStoreDevice } from "../device";
-import { getStorePush } from "../push";
+import push from "../../plugins/PushService"
 import { Storage } from '@capacitor/storage'
 
 
@@ -46,7 +46,6 @@ const store = {
 		 */
 		logInGuest: async (state, _, store) => {
 			const { state: device } = getStoreDevice()
-			const { state: push } = getStorePush()
 			const data = {
 				browserId: device.browserId,
 				deviceInfo: device.deviceInfo,

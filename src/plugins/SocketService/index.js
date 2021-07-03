@@ -101,7 +101,7 @@ export class SocketService {
 				const jsonData = JSON.parse(data)
 				res(jsonData)
 			})
-			ws.send(JSON.stringify({
+			this.websocket.send(JSON.stringify({
 				path: "com", action, payload
 			}))
 	

@@ -5,7 +5,7 @@ import { Menu as MenuIcon } from "@material-ui/icons"
 import CentralSpace from "./CentralSpace";
 import Avatar from "../app/Avatar";
 import UserHeader from "../../pages/user/UserHeader";
-import DocHeader from "../../pages/doc/DocHeader";
+//import DocHeader from "../../pages/doc/DocHeader";
 
 import { useRoute } from "../../stores/route";
 import { useLayout } from "../../stores/layout";
@@ -51,7 +51,7 @@ function Header() {
 
 					{{
 						"user.list": <UserHeader />,
-						"doc.list": <DocHeader />,
+						//"doc.list": <DocHeader />,
 					}[route.currentPage] ?? null}
 
 				</CentralSpace>

@@ -15,8 +15,6 @@ import { useDevice } from "./stores/device";
 import { useAuth } from "./stores/auth";
 import DebugButton from "./components/debug/DebugButton"
 
-const DocDetail = lazy(() => import('./pages/doc/DocDetail'))
-const DocList = lazy(() => import('./pages/doc/DocList'))
 const MessageList = lazy(() => import('./pages/message/MessageList'))
 
 
@@ -33,7 +31,7 @@ const App = () => {
 			await initDevice()
 			fetchMe()
 		})()
-	}, [initPush, initDevice])
+	}, [initDevice])
 
 
 
