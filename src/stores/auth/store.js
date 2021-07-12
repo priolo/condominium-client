@@ -18,13 +18,9 @@ const store = {
 		/** token della sessione jwt */
 		token: null,
 
-
-
-
 		email: "",
 		password: "",
 		activationToken: "",
-
 	},
 
 	/** init dello STORE */

@@ -9,7 +9,7 @@ import { Capacitor } from '@capacitor/core'
 
 const host = Capacitor.getPlatform() == "web" ? "localhost" : "192.168.8.103"
 const optionsDefault = {
-	baseUrl: `http://${host}:8080/api/`
+	baseUrl: `http://${host}:5001/api/`
 }
 
 export class AjaxService {

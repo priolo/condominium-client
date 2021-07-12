@@ -15,16 +15,11 @@ const shots = [
 const options = {
 	exclude: [
 		"layout",
-		"doc.all.id",
-		"doc.all.date",
-		"menu.all.id",
-		"url",
 		"auth.token",
 		"auth.activationToken",
 		"auth.user.id",
 		"auth.user.iat",
 		"auth.user.exp",
-		"node"
 	],
 }
 

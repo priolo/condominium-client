@@ -5,21 +5,21 @@ import { Typography, Button } from '@material-ui/core'
 
 
 
-
 const LoginPage = () => {
 
 	// HOOKs
-	const { state: auth, logInGuest } = useAuth()
-
+	const { state: auth, logInGuest, setEmail, test } = useAuth()
 
 	// HANDLE
 	const handleClickAnonimus =  (e)=> logInGuest()
-
+	
 	// RENDER
 	return (
 		<Form>
 			<Typography>Scegli il tuo login</Typography>
 			<Button onClick={handleClickAnonimus}>Anonimous</Button>
+			<div>{auth.email}</div>
+			<div>{auth.password}</div>
 		</Form>
 	)
 }

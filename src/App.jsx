@@ -44,7 +44,7 @@ const App = () => {
 			{!isInitialized() ? (
 
 				<div>registration...</div>
-
+			
 			) : isLogged() ? (
 
 				<Router>
@@ -77,6 +77,7 @@ const App = () => {
 					</Body>
 				</Router>
 
+			// IS NOT LOGGED
 			) : (
 
 				<Router>

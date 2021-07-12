@@ -4,7 +4,7 @@
   "private": true,
   "//dependencies": {
     "@priolo/jon#local": "file:C://Users//iorio//Documents//Jon",
-    "@priolo/jon": "^0.2.2",
+    "@priolo/jon": "^0.2.4",
     "@priolo/jon-utils#local": "file:C://Users//iorio//Documents//jon-utils"
   },
   "dependencies": {

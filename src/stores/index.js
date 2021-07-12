@@ -5,7 +5,8 @@ import layout from "./layout/store"
 import route from "./route/store"
 import user from "./user/store"
 import message from "./message/store"
+import position from "./position/store"
 
-setupStore({ auth, device, layout, route, user, message })
+setupStore({ auth, device, layout, route, user, message, position })
 
 export default MultiStoreProvider

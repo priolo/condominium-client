@@ -1,7 +1,5 @@
 /* eslint eqeqeq: "off" */
-import socket from "../../plugins/SocketService"
-import position from "../../plugins/PositionService"
-
+import {socketService, socketCommandService, ACTIONS_FROM_CLIENT} from "../../plugins/SocketService"
 import { getStoreAuth } from "../auth";
 
 
@@ -10,7 +8,6 @@ const store = {
 	state: {
 		text: "",
 		messages: [],
-		haveAccuracy: false,
 	},
 
 	getters: {
@@ -22,34 +19,29 @@ const store = {
 		connect: async (state, _, store) => {
 			const { state: auth } = getStoreAuth()
 			if (!auth.token) return
-			await socket.connect(auth.token)
-			await position.start()
+			await socketService.connect(auth.token)
 		},
 
 		/** disconnette il WS al server */
 		disconnect: async (state, _, store) => {
-			socket.disconnect()
-			position.stop()
+			socketService.disconnect()
 		},
 
 		/** invia un nuovo messaggio al server */
 		sendTextMessage: (state, _, store) => {
-			socket.send({
-				path: "com", action: "message",
-				payload: state.text,
-			})
+			socketCommandService.textMessage(state.text)
 		},
 
 		/** chiedo al server la lista dei messaggi locali */
 		sendRefreshMessages: async (state, _, store) => {
-			const messages = await socket.sendAndWait("messages")
+			socketCommandService.getNearMessages()
+			const messages = await socketService.wait(ACTIONS_FROM_CLIENT.MESSAGES)
 			store.setMessages(messages)
 		}
 
 	},
 
 	mutators: {
-		setHaveAccuracy: (state, haveAccuracy) => ({ haveAccuracy }),
 		setText: (state, text) => ({ text }),
 		setMessages: (state, messages) => ({ messages }),
 	},

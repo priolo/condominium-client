@@ -7,8 +7,6 @@ const optionsDefault = {
 	checkDelay: 2000,
 }
 
-
-
 export class Ping {
 
 	constructor(server, options = optionsDefault) {
